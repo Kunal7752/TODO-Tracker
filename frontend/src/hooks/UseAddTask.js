@@ -5,7 +5,7 @@ const useAddTask = () => {
   const queryClient = useQueryClient();
   const { mutate, isSuccess, isPending, error } = useMutation({
     mutationFn: addTask,
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["authUser"] }),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["tasks"] }),
   });
 
   return { error, isSuccess, isPending, addTaskMutation: mutate };
